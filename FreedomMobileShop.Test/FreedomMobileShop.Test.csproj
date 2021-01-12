@@ -21,11 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Implementation\" />
-    <Folder Include="TestCaseData\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FreedomMobileShop.Common\FreedomMobileShop.Common.csproj" />
     <ProjectReference Include="..\FreedomMobileShop.Entity\FreedomMobileShop.Entity.csproj" />
     <ProjectReference Include="..\FreedomMobileShop\FreedomMobileShop.csproj" />

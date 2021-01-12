@@ -6,6 +6,9 @@ using System.Linq;
 
 namespace FreedomMobileShop.Controllers
 {
+    /// <summary>
+    /// This is for testing purpose (Default available while creating)
+    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -22,6 +25,10 @@ namespace FreedomMobileShop.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// For testing the APi is working or not (Default End Point)
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

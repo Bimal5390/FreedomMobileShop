@@ -5,11 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Implementation\" />
-    <Folder Include="Interface\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FreedomMobileShop.Common\FreedomMobileShop.Common.csproj" />
     <ProjectReference Include="..\FreedomMobileShop.DataAccess\FreedomMobileShop.DataAccess.csproj" />
     <ProjectReference Include="..\FreedomMobileShop.Entity\FreedomMobileShop.Entity.csproj" />
