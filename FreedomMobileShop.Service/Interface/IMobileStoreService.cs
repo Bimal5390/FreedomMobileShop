@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FreedomMobileShop.Service.Interface
 {
-    class IMobileStoreService
+    public interface IMobileStoreService
     {
     }
 }

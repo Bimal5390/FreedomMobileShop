@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿/// <summary>
+/// 
+/// </summary>
 namespace FreedomMobileShop.DataAccess.Implementation
 {
-    public class MobileStoreRepository
+    using FreedomMobileShop.DataAccess.Interface;
+
+    public class MobileStoreRepository: IMobileStoreRepository
     {
     }
 }

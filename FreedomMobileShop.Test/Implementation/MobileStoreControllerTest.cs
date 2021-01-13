@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿/// <summary>
+/// All Test cases for Mobile Store controller class
+/// </summary>
 namespace FreedomMobileShop.Test.Implementation
 {
-    /// <summary>
-    /// All Test cases for Mobile Store controller class
-    /// </summary>
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+    
     public class MobileStoreControllerTest
     {
         #region Private Variables

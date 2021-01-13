@@ -1,4 +1,7 @@
-﻿namespace FreedomMobileShop.Entity.Entities
+﻿/// <summary>
+/// 
+/// </summary>
+namespace FreedomMobileShop.Entity.Entities
 {
     using Microsoft.EntityFrameworkCore;
 

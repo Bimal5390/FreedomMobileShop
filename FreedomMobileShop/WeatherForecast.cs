@@ -1,7 +1,10 @@
-using System;
-
+/// <summary>
+/// 
+/// </summary>
 namespace FreedomMobileShop
 {
+    using System;
+
     public class WeatherForecast
     {
         public DateTime Date { get; set; }

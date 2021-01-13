@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/// <summary>
+/// 
+/// </summary>
 
 namespace FreedomMobileShop.Service.Implementation
 {
-    class MobileStoreService
+    using FreedomMobileShop.Service.Interface;
+    public class MobileStoreService: IMobileStoreService
     {
+
     }
 }
