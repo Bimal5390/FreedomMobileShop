@@ -5,7 +5,7 @@ namespace FreedomMobileShop.Entity.Entities
 {
     using Microsoft.EntityFrameworkCore;
 
-    public partial class AppDBContext: DbContext
+    public partial class AppDBContext : DbContext
     {
         public AppDBContext()
         {
@@ -20,9 +20,13 @@ namespace FreedomMobileShop.Entity.Entities
         {
             if (!optionsBuilder.IsConfigured)
             {
-                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                //optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("DbConnectionString"));
+                optionsBuilder.UseSqlServer(@"Server=*****;DataBase=FreedomMobileShop;Trusted_Connection=True;");
             }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
         }
     }
 }
