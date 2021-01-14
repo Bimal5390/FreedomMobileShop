@@ -3,18 +3,24 @@ namespace FreedomMobileShop
     using FreedomMobileShop.DataAccess.Implementation;
     using FreedomMobileShop.DataAccess.Interface;
     using FreedomMobileShop.Entity.Entities;
+    using FreedomMobileShop.Service.Implementation;
+    using FreedomMobileShop.Service.Interface;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Microsoft.Extensions.Logging;
 
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly ILogger _logger;
+
+        public Startup(IConfiguration configuration, ILogger<Startup> logger)
         {
             Configuration = configuration;
+            _logger = logger;
         }
 
         public IConfiguration Configuration { get; }
@@ -25,7 +31,10 @@ namespace FreedomMobileShop
             services.AddControllers();
             var connection = Configuration.GetConnectionString("FreedomMobileShopDB");
             services.AddDbContext<AppDBContext>(item => item.UseSqlServer(connection));
-            services.AddScoped<IMobileStoreRepository, MobileStoreRepository>();
+            services.AddScoped<IRepositoryWrapper, BaseRepository>();
+            services.AddScoped<IServiceWrapper, ServiceWrapper>();
+            services.AddTransient<IMobileStoreService, MobileStoreService>();
+            services.AddScoped<ILogger<MobileStoreService>, Logger<MobileStoreService>>();
             services.AddSwaggerGen();
             services.AddCors();
         }
