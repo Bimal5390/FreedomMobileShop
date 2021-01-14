@@ -1,6 +1,3 @@
-/// <summary>
-/// 
-/// </summary>
 namespace FreedomMobileShop
 {
     using System;

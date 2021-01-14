@@ -3,11 +3,12 @@
 /// </summary>
 namespace FreedomMobileShop.DataAccess.Interface
 {
-    using System;
+    using FreedomMobileShop.Entity.Entities;
     using System.Collections.Generic;
-    using System.Text;
+    using System.Threading.Tasks;
 
     public interface IMobileStoreRepository
     {
+        Task<IEnumerable<Stock>> GetStocks();
     }
 }

@@ -78,5 +78,12 @@ namespace FreedomMobileShop.Entity.Entities
                 entity.ToTable("Stock", "public");
             });
         }
+
+        public virtual DbSet<Stock> Stocks { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Mobile> Mobiles { get; set; }
+        public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<Sell> Sells { get; set; }
     }
 }

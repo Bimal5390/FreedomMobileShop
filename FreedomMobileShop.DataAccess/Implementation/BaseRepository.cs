@@ -1,10 +1,14 @@
-﻿using FreedomMobileShop.DataAccess.Interface;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
-
+﻿/// <summary>
+/// 
+/// </summary>
 namespace FreedomMobileShop.DataAccess.Implementation
 {
+    using FreedomMobileShop.DataAccess.Interface;
+    using FreedomMobileShop.Entity.Entities;
+    using Microsoft.EntityFrameworkCore;
+    using Microsoft.Extensions.Configuration;
+    using System;
+
     public class BaseRepository : IDisposable, IRepositoryWrapper
     {
         protected static AppDBContext _context;
@@ -12,11 +16,16 @@ namespace FreedomMobileShop.DataAccess.Implementation
         private IMobileStoreRepository _mobileStoreRepository;
         protected static string _connectionString;
 
+        public BaseRepository(IConfiguration config)
+        {
+            _config = config;
+        }
+
         public BaseRepository()
         {
         }
 
-        public IMobileStoreRepository AssetModelRepository
+        public IMobileStoreRepository MobileStoreRepository
         {
             get
             {
@@ -50,7 +59,7 @@ namespace FreedomMobileShop.DataAccess.Implementation
 
         public void Dispose()
         {
-            //throw new NotImplementedException();  
+            throw new NotImplementedException();  
         }
     }
 }

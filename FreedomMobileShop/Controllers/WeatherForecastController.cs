@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 
+/// Default controller available for testing purpose
 /// </summary>
 namespace FreedomMobileShop.Controllers
 {
@@ -9,9 +9,6 @@ namespace FreedomMobileShop.Controllers
     using System.Collections.Generic;
     using System.Linq;
 
-    /// <summary>
-    /// This is for testing purpose (Default available while creating)
-    /// </summary>
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
@@ -29,7 +26,7 @@ namespace FreedomMobileShop.Controllers
         }
 
         /// <summary>
-        /// For testing the APi is working or not (Default End Point)
+        /// Default end point is available while creating
         /// </summary>
         /// <returns></returns>
         [HttpGet]
