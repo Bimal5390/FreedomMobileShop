@@ -5,6 +5,7 @@ namespace FreedomMobileShop.DataAccess.Implementation
 {
     using FreedomMobileShop.DataAccess.Interface;
     using FreedomMobileShop.Entity.Entities;
+    using Microsoft.Data.SqlClient;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using System;
@@ -19,6 +20,15 @@ namespace FreedomMobileShop.DataAccess.Implementation
         public BaseRepository(IConfiguration config)
         {
             _config = config;
+            GetOpenConnection(config);
+        }
+
+        public SqlConnection GetOpenConnection(IConfiguration config)
+        {
+            _connectionString = config["ConnectionStrings:FreedomMobileShopDB"];
+            SqlConnection connection = new SqlConnection(_connectionString);
+            connection.Open();
+            return connection;
         }
 
         public BaseRepository()
@@ -59,7 +69,7 @@ namespace FreedomMobileShop.DataAccess.Implementation
 
         public void Dispose()
         {
-            throw new NotImplementedException();  
+            //throw new NotImplementedException();  
         }
     }
 }

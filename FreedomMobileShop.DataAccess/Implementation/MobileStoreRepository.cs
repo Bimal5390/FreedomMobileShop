@@ -20,7 +20,7 @@ namespace FreedomMobileShop.DataAccess.Implementation
         {
             try
             {
-                return await this.Context.Stocks.ToListAsync();
+                return await this.Context.Stock.ToListAsync();
             }
             catch (Exception ex)
             {

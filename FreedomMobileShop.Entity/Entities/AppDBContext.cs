@@ -28,62 +28,101 @@ namespace FreedomMobileShop.Entity.Entities
         {
             modelBuilder.Entity<Mobile>(entity =>
             {
-                entity.HasKey(e => e.MobileId)
-                    .HasName("");
+                entity.HasKey(e => e.MobileId).HasName("MobileId");
+                entity.HasKey(e => e.Description)
+                    .HasName("Description");
+                entity.HasKey(e => e.IMEINumber)
+                    .HasName("IMEINumber");
+                entity.HasKey(e => e.MobileCompanyId)
+                    .HasName("MobileCompanyId");
+                entity.HasKey(e => e.MobileModelId)
+                    .HasName("MobileModelId");
+                entity.Property(e => e.Name)
+                    .HasColumnName("Name")
+                    .IsUnicode(false);
 
-                entity.ToTable("Mobile", "public");
+                entity.HasKey(e => e.Type)
+                    .HasName("Type");
             });
 
             modelBuilder.Entity<Brand>(entity =>
             {
                 entity.HasKey(e => e.BrandID)
-                    .HasName("");
-
-                entity.ToTable("Brand", "public");
+                    .HasName("BrandID");
+                entity.HasKey(e => e.Company)
+                    .HasName("Company");
+                entity.HasKey(e => e.Description)
+                    .HasName("Description");
+                entity.HasKey(e => e.Name)
+                    .HasName("Name");
+                entity.HasKey(e => e.Type)
+                    .HasName("Type");
             });
 
             modelBuilder.Entity<Sell>(entity =>
             {
                 entity.HasKey(e => e.SellId)
-                    .HasName("");
-
-                entity.ToTable("Sell", "public");
+                    .HasName("SellId");
+                entity.HasKey(e => e.Description)
+                    .HasName("Description");
+                entity.HasKey(e => e.Name)
+                    .HasName("Name");
+                entity.HasKey(e => e.Type)
+                    .HasName("Type");
             });
 
             modelBuilder.Entity<Customer>(entity =>
             {
                 entity.HasKey(e => e.CustomerId)
-                    .HasName("");
-
-                entity.ToTable("Customer", "public");
+                    .HasName("CustomerId");
+                entity.HasKey(e => e.Name)
+                    .HasName("Name");
+                entity.HasKey(e => e.MobileNumber)
+                    .HasName("MobileNumber");
+                entity.HasKey(e => e.Email)
+                    .HasName("Email");
+                entity.HasKey(e => e.AddressLine1)
+                    .HasName("AddressLine1");
+                entity.HasKey(e => e.AddressLine2)
+                    .HasName("AddressLine2");
             });
 
             modelBuilder.Entity<Payment>(entity =>
             {
                 entity.HasKey(e => e.PaymentId)
-                    .HasName("");
+                    .HasName("PaymentId");
                 entity.HasKey(e => e.CustomerId)
-                    .HasName("");
+                    .HasName("CustomerId");
                 entity.HasKey(e => e.MobileId)
-                    .HasName("");
-
-                entity.ToTable("Payment", "public");
+                    .HasName("MobileId");
+                entity.HasKey(e => e.Amount)
+                    .HasName("Amount");
+                entity.HasKey(e => e.Description)
+                    .HasName("Description");
+                entity.HasKey(e => e.PaymentDate)
+                    .HasName("PaymentDate");
             });
 
             modelBuilder.Entity<Stock>(entity =>
             {
                 entity.HasKey(e => e.StockId)
-                    .HasName("");
-
-                entity.ToTable("Stock", "public");
+                    .HasName("StockId");
+                entity.HasKey(e => e.Description)
+                    .HasName("Description");
+                entity.HasKey(e => e.Items)
+                    .HasName("Items");
+                entity.HasKey(e => e.Number)
+                    .HasName("Number");
+                entity.HasKey(e => e.Type)
+                    .HasName("Type");
             });
         }
 
-        public virtual DbSet<Stock> Stocks { get; set; }
-        public virtual DbSet<Brand> Brands { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Mobile> Mobiles { get; set; }
-        public virtual DbSet<Payment> Payments { get; set; }
-        public virtual DbSet<Sell> Sells { get; set; }
+        public virtual DbSet<Stock> Stock { get; set; }
+        public virtual DbSet<Brand> Brand { get; set; }
+        public virtual DbSet<Customer> Customer { get; set; }
+        public virtual DbSet<Mobile> Mobile { get; set; }
+        public virtual DbSet<Payment> Payment { get; set; }
+        public virtual DbSet<Sell> Sell { get; set; }
     }
 }
