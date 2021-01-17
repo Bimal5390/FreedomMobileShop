@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 
+/// Service class for mobile operations
 /// </summary>
 namespace FreedomMobileShop.Service.Implementation
 {
@@ -287,6 +287,35 @@ namespace FreedomMobileShop.Service.Implementation
             {
                 _logger.LogError("Exception Occurs: " + ex.Message);
                 return Utility.SendErrorResponseForMobile(Constant.ERROR_OCCURED);
+            }
+        }
+
+        /// <summary>
+        /// Business logic to get the list of brands vailable in the shop
+        /// </summary>
+        /// <returns></returns>
+        public async Task<ListResponse<Brand>> GetAllBrands()
+        {
+            ListResponse<Brand> result = new ListResponse<Brand>();
+            try
+            {
+                IEnumerable<Brand> data = await _repositoryWrapper.MobileStoreRepository.GetAllBrands();
+                if (data != null && data.Count() > 0)
+                {
+                    _logger.LogInformation("Data available for given input");
+                    result.Response = data;
+                }
+                else
+                {
+                    _logger.LogWarning("Data is not present for the given input");
+                    return Utility.SendErrorResponseGetBrands(Constant.RECORD_NOT_FOUND);
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception Occurs: " + ex.Message);
+                return Utility.SendErrorResponseGetBrands(Constant.ERROR_OCCURED);
             }
         }
     }

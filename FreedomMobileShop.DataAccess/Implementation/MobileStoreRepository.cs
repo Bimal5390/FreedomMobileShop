@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 
+/// Repository class for mobile operations
 /// </summary>
 namespace FreedomMobileShop.DataAccess.Implementation
 {
@@ -174,6 +174,22 @@ namespace FreedomMobileShop.DataAccess.Implementation
                     context.SaveChanges();
                 }
                 return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Repository method for fetching the list of brands available in the shop
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<Brand>> GetAllBrands()
+        {
+            try
+            {
+                return await this.Context.Brand.ToListAsync();
             }
             catch (Exception ex)
             {

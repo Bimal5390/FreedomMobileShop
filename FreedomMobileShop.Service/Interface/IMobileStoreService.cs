@@ -18,5 +18,6 @@ namespace FreedomMobileShop.Service.Interface
         Task<SingleResponse<bool>> DeleteMobileById(int mobileId);
         Task<SingleResponse<bool>> SaveMobile(Mobile mobile);
         Task<SingleResponse<bool>> UpdateMobileDetails(Mobile mobile);
+        Task<ListResponse<Brand>> GetAllBrands();
     }
 }

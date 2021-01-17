@@ -56,5 +56,17 @@ namespace FreedomMobileShop.Service.Helper
             };
             return response;
         }
+
+        public static ListResponse<Brand> SendErrorResponseGetBrands(string errorMessage)
+        {
+            ListResponse<Brand> response = new ListResponse<Brand>
+            {
+                Success = false,
+                StatusCode = HttpStatusCode.BadRequest,
+                Message = errorMessage,
+                Response = null
+            };
+            return response;
+        }
     }
 }

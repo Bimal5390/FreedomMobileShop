@@ -141,5 +141,18 @@ namespace FreedomMobileShop.Controllers
             SingleResponse<bool> data = await _serviceWrapper.MobileStoreService.UpdateMobileDetails(mobile);
             return new ObjectResult(data);
         }
+
+        /// <summary>
+        /// End point for fetching list of brands available in shop
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("GetBrands")]
+        public async Task<IActionResult> GetAllBrands()
+        {
+            _logger.LogInformation("GetAllBrands end point processing started");
+            ListResponse<Brand> data = await _serviceWrapper.MobileStoreService.GetAllBrands();
+            return new ObjectResult(data);
+        }
     }
 }

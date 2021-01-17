@@ -18,5 +18,6 @@ namespace FreedomMobileShop.DataAccess.Interface
         Task<bool> DeleteMobileById(int mobileId);
         Task<bool> SaveMobile(Mobile mobile);
         Task<bool> UpdateMobileDetails(Mobile mobile);
+        Task<IEnumerable<Brand>> GetAllBrands();
     }
 }
