@@ -3,6 +3,7 @@
 /// </summary>
 namespace FreedomMobileShop.Controllers
 {
+    using FreedomMobileShop.Entity.Entities;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
     using System;

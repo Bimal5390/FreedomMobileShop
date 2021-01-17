@@ -15,7 +15,7 @@ namespace FreedomMobileShop.Service.Implementation
     using System.Linq;
     using System.Threading.Tasks;
 
-    public class MobileStoreService: IMobileStoreService
+    public class MobileStoreService : IMobileStoreService
     {
         #region Private Variables
 
@@ -30,12 +30,12 @@ namespace FreedomMobileShop.Service.Implementation
             _logger = logger;
         }
 
-        public async Task<ListResponse<Stock>> GetStocks()
+        public async Task<ListResponse<Stock>> GetAllStocks()
         {
             ListResponse<Stock> result = new ListResponse<Stock>();
             try
             {
-                IEnumerable<Stock> data = await _repositoryWrapper.MobileStoreRepository.GetStocks();
+                IEnumerable<Stock> data = await _repositoryWrapper.MobileStoreRepository.GetAllStocks();
                 if (data != null && data.Count() > 0)
                 {
                     _logger.LogInformation("Data available for given input");
@@ -52,6 +52,201 @@ namespace FreedomMobileShop.Service.Implementation
             {
                 _logger.LogError("Exception Occurs: " + ex.Message);
                 return Utility.SendErrorResponseGetStocks(Constant.ERROR_OCCURED);
+            }
+        }
+
+        public async Task<ListResponse<Mobile>> GetAllMobiles()
+        {
+            ListResponse<Mobile> result = new ListResponse<Mobile>();
+            try
+            {
+                IEnumerable<Mobile> data = await _repositoryWrapper.MobileStoreRepository.GetAllMobiles();
+                if (data != null && data.Count() > 0)
+                {
+                    _logger.LogInformation("Data available for given input");
+                    result.Response = data;
+                }
+                else
+                {
+                    _logger.LogWarning("Data is not present for the given input");
+                    return Utility.SendErrorResponseGetMobiles(Constant.RECORD_NOT_FOUND);
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception Occurs: " + ex.Message);
+                return Utility.SendErrorResponseGetMobiles(Constant.ERROR_OCCURED);
+            }
+        }
+
+        public async Task<ListResponse<Mobile>> GetMobilesByModelName(string modelName)
+        {
+            ListResponse<Mobile> result = new ListResponse<Mobile>();
+            try
+            {
+                if (string.IsNullOrEmpty(modelName))
+                {
+                    _logger.LogInformation("Invalid Input");
+                    return Utility.SendErrorResponseGetMobiles(Constant.INVALID_INPUT);
+                }
+                IEnumerable<Mobile> data = await _repositoryWrapper.MobileStoreRepository.GetMobilesByModelName(modelName);
+                if (data != null && data.Count() > 0)
+                {
+                    _logger.LogInformation("Data available for given input");
+                    result.Response = data;
+                }
+                else
+                {
+                    _logger.LogWarning("Data is not present for the given input");
+                    return Utility.SendErrorResponseGetMobiles(Constant.RECORD_NOT_FOUND);
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception Occurs: " + ex.Message);
+                return Utility.SendErrorResponseGetMobiles(Constant.ERROR_OCCURED);
+            }
+        }
+
+        public async Task<ListResponse<Payment>> GetSellsReportByDate(DateTime fromDate, DateTime toDate)
+        {
+            ListResponse<Payment> result = new ListResponse<Payment>();
+            try
+            {
+                IEnumerable<Payment> data = await _repositoryWrapper.MobileStoreRepository.GetSellsReportByDate(fromDate, toDate);
+                if (data != null && data.Count() > 0)
+                {
+                    _logger.LogInformation("Data available for given input");
+                    result.Response = data;
+                }
+                else
+                {
+                    _logger.LogWarning("Data is not present for the given input");
+                    return Utility.SendErrorResponseGetPaymentReport(Constant.RECORD_NOT_FOUND);
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception Occurs: " + ex.Message);
+                return Utility.SendErrorResponseGetPaymentReport(Constant.ERROR_OCCURED);
+            }
+        }
+
+        public async Task<ListResponse<Payment>> GetSellsReportByBrand(DateTime fromDate, DateTime toDate)
+        {
+            ListResponse<Payment> result = new ListResponse<Payment>();
+            try
+            {
+                IEnumerable<Payment> data = await _repositoryWrapper.MobileStoreRepository.GetSellsReportByBrand(fromDate, toDate);
+                if (data != null && data.Count() > 0)
+                {
+                    _logger.LogInformation("Data available for given input");
+                    result.Response = data;
+                }
+                else
+                {
+                    _logger.LogWarning("Data is not present for the given input");
+                    return Utility.SendErrorResponseGetPaymentReport(Constant.RECORD_NOT_FOUND);
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception Occurs: " + ex.Message);
+                return Utility.SendErrorResponseGetPaymentReport(Constant.ERROR_OCCURED);
+            }
+        }
+
+        public async Task<SingleResponse<bool>> DeleteMobileById(int mobileId)
+        {
+            SingleResponse<bool> result = new SingleResponse<bool>();
+            try
+            {
+                if (mobileId <= 0)
+                {
+                    _logger.LogInformation("Invalid Input");
+                    return Utility.SendErrorResponseForMobile(Constant.INVALID_INPUT);
+                }
+                bool data = await _repositoryWrapper.MobileStoreRepository.DeleteMobileById(mobileId);
+                if (data != null)
+                {
+                    _logger.LogInformation("Data deleted");
+                    result.Response = data;
+                }
+                else
+                {
+                    _logger.LogWarning("Data is not present for the given input");
+                    return Utility.SendErrorResponseForMobile(Constant.RECORD_NOT_FOUND);
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception Occurs: " + ex.Message);
+                return Utility.SendErrorResponseForMobile(Constant.ERROR_OCCURED);
+            }
+        }
+
+        public async Task<SingleResponse<bool>> SaveMobile(Mobile mobile)
+        {
+            SingleResponse<bool> result = new SingleResponse<bool>();
+            try
+            {
+                if (mobile == null)
+                {
+                    _logger.LogInformation("Invalid Input");
+                    return Utility.SendErrorResponseForMobile(Constant.INVALID_INPUT);
+                }
+                bool data = await _repositoryWrapper.MobileStoreRepository.SaveMobile(mobile);
+                if (data != null)
+                {
+                    _logger.LogInformation("Data saved");
+                    result.Response = data;
+                }
+                else
+                {
+                    _logger.LogWarning("Data not saved");
+                    return Utility.SendErrorResponseForMobile(Constant.RECORD_NOT_FOUND);
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception Occurs: " + ex.Message);
+                return Utility.SendErrorResponseForMobile(Constant.ERROR_OCCURED);
+            }
+        }
+
+        public async Task<SingleResponse<bool>> UpdateMobileDetails(Mobile mobile)
+        {
+            SingleResponse<bool> result = new SingleResponse<bool>();
+            try
+            {
+                if (mobile == null)
+                {
+                    _logger.LogInformation("Invalid Input");
+                    return Utility.SendErrorResponseForMobile(Constant.INVALID_INPUT);
+                }
+                bool data = await _repositoryWrapper.MobileStoreRepository.UpdateMobileDetails(mobile);
+                if (data != null)
+                {
+                    _logger.LogInformation("Data saved");
+                    result.Response = data;
+                }
+                else
+                {
+                    _logger.LogWarning("Data not saved");
+                    return Utility.SendErrorResponseForMobile(Constant.RECORD_NOT_FOUND);
+                }
+                return result;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Exception Occurs: " + ex.Message);
+                return Utility.SendErrorResponseForMobile(Constant.ERROR_OCCURED);
             }
         }
     }

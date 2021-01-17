@@ -95,6 +95,8 @@ namespace FreedomMobileShop.Entity.Entities
                     .HasName("CustomerId");
                 entity.HasKey(e => e.MobileId)
                     .HasName("MobileId");
+                entity.HasKey(e => e.BrandId)
+                    .HasName("BrandId");
                 entity.HasKey(e => e.Amount)
                     .HasName("Amount");
                 entity.HasKey(e => e.Description)

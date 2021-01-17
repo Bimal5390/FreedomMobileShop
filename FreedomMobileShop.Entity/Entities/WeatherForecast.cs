@@ -1,6 +1,8 @@
-namespace FreedomMobileShop
+﻿namespace FreedomMobileShop.Entity.Entities
 {
     using System;
+    using System.Collections.Generic;
+    using System.Text;
 
     public class WeatherForecast
     {

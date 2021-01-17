@@ -14,5 +14,6 @@
         public double Amount { get; set; }
         public string Description { get; set; }
         public int MobileId { get; set; }
+        public int BrandId { get; set; }
     }
 }

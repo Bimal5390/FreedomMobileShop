@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreedomMobileShop", "FreedomMobileShop\FreedomMobileShop.csproj", "{79A97579-6C9E-4F3B-A4FC-D43D7BFBA404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreedomMobileShop", "FreedomMobileShop\FreedomMobileShop.csproj", "{79A97579-6C9E-4F3B-A4FC-D43D7BFBA404}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreedomMobileShop.Common", "FreedomMobileShop.Common\FreedomMobileShop.Common.csproj", "{B906AFB7-6A29-4AE2-8FDA-6D30845AB36E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreedomMobileShop.Common", "FreedomMobileShop.Common\FreedomMobileShop.Common.csproj", "{B906AFB7-6A29-4AE2-8FDA-6D30845AB36E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreedomMobileShop.Entity", "FreedomMobileShop.Entity\FreedomMobileShop.Entity.csproj", "{0ECEB6EE-8E6F-47DD-A33A-C7E364711696}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreedomMobileShop.Entity", "FreedomMobileShop.Entity\FreedomMobileShop.Entity.csproj", "{0ECEB6EE-8E6F-47DD-A33A-C7E364711696}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreedomMobileShop.DataAccess", "FreedomMobileShop.DataAccess\FreedomMobileShop.DataAccess.csproj", "{5808A184-DC55-4A40-B213-5374751CFCCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreedomMobileShop.DataAccess", "FreedomMobileShop.DataAccess\FreedomMobileShop.DataAccess.csproj", "{5808A184-DC55-4A40-B213-5374751CFCCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreedomMobileShop.Service", "FreedomMobileShop.Service\FreedomMobileShop.Service.csproj", "{6CB09A5B-492E-4E7E-986A-E4913AF6E1E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreedomMobileShop.Service", "FreedomMobileShop.Service\FreedomMobileShop.Service.csproj", "{6CB09A5B-492E-4E7E-986A-E4913AF6E1E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreedomMobileShop.Test", "FreedomMobileShop.Test\FreedomMobileShop.Test.csproj", "{20467C9C-80F4-43A8-A506-63653FCD01EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreedomMobileShop.Test", "FreedomMobileShop.Test\FreedomMobileShop.Test.csproj", "{20467C9C-80F4-43A8-A506-63653FCD01EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FreedomMobileShop.Service.Test", "FreedomMobileShop.Service.Test\FreedomMobileShop.Service.Test.csproj", "{33F0FBB5-D2B1-4530-9F58-AF3D24AD6831}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreedomMobileShop.Service.Test", "FreedomMobileShop.Service.Test\FreedomMobileShop.Service.Test.csproj", "{33F0FBB5-D2B1-4530-9F58-AF3D24AD6831}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,7 +7,8 @@ namespace FreedomMobileShop.Service.Test.Implementation
     using System.Collections.Generic;
     using System.Text;
 
-    class MobileStoreServiceTest
+    public class MobileStoreServiceTest
     {
+
     }
 }
