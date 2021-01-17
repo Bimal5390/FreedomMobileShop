@@ -17,6 +17,10 @@ namespace FreedomMobileShop.DataAccess.Implementation
         {
         }
 
+        /// <summary>
+        /// Repository method for getting all stocks
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<Stock>> GetAllStocks()
         {
             try
@@ -29,6 +33,10 @@ namespace FreedomMobileShop.DataAccess.Implementation
             }
         }
 
+        /// <summary>
+        /// Repository method for getting all mobiles
+        /// </summary>
+        /// <returns></returns>
         public async Task<IEnumerable<Mobile>> GetAllMobiles()
         {
             try
@@ -41,6 +49,11 @@ namespace FreedomMobileShop.DataAccess.Implementation
             }
         }
 
+        /// <summary>
+        /// Repository method for getting mobile details by model name
+        /// </summary>
+        /// <param name="modelName"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<Mobile>> GetMobilesByModelName(string modelName)
         {
             try
@@ -53,6 +66,12 @@ namespace FreedomMobileShop.DataAccess.Implementation
             }
         }
 
+        /// <summary>
+        /// Repositiry method for gettings sells report based on date provided
+        /// </summary>
+        /// <param name="fromDate"></param>
+        /// <param name="toDate"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<Payment>> GetSellsReportByDate(DateTime fromDate, DateTime toDate)
         {
             try
@@ -65,6 +84,12 @@ namespace FreedomMobileShop.DataAccess.Implementation
             }
         }
 
+        /// <summary>
+        /// Repositiry method for gettings sells report based on date provided and by brand name
+        /// </summary>
+        /// <param name="fromDate"></param>
+        /// <param name="toDate"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<Payment>> GetSellsReportByBrand(DateTime fromDate, DateTime toDate)
         {
             try
@@ -77,6 +102,11 @@ namespace FreedomMobileShop.DataAccess.Implementation
             }
         }
 
+        /// <summary>
+        /// Repository method for deleting a mobile by id
+        /// </summary>
+        /// <param name="mobileId"></param>
+        /// <returns></returns>
         public async Task<bool> DeleteMobileById(int mobileId)
         {
             try
@@ -95,6 +125,11 @@ namespace FreedomMobileShop.DataAccess.Implementation
             }
         }
 
+        /// <summary>
+        /// Repository method for save mobile information
+        /// </summary>
+        /// <param name="mobile"></param>
+        /// <returns></returns>
         public async Task<bool> SaveMobile(Mobile mobile)
         {
             try
@@ -121,6 +156,11 @@ namespace FreedomMobileShop.DataAccess.Implementation
             }
         }
 
+        /// <summary>
+        /// Repository method for updating mobile details
+        /// </summary>
+        /// <param name="mobile"></param>
+        /// <returns></returns>
         public async Task<bool> UpdateMobileDetails(Mobile mobile)
         {
             try

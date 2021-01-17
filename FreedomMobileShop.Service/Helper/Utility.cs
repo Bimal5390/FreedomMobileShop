@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 
+/// List of success and error response created for specific method
 /// </summary>
 namespace FreedomMobileShop.Service.Helper
 {

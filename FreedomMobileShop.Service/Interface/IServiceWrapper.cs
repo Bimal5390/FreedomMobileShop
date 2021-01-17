@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 
+/// Wrapper for service interface
 /// </summary>
 namespace FreedomMobileShop.Service.Interface
 {

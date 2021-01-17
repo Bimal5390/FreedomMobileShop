@@ -1,4 +1,7 @@
-﻿namespace FreedomMobileShop.DataAccess.Interface
+﻿/// <summary>
+/// Wrapper for all repositories
+/// </summary>
+namespace FreedomMobileShop.DataAccess.Interface
 {
     public interface IRepositoryWrapper
     {

@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 
+/// Wrapper class file for all services
 /// </summary>
 namespace FreedomMobileShop.Service.Implementation
 {

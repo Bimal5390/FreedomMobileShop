@@ -133,7 +133,7 @@ namespace FreedomMobileShop.Controllers
         /// </summary>
         /// <param name="mobile"></param>
         /// <returns>true if success and false if fails</returns>
-        [HttpPost]
+        [HttpPut]
         [Route("UpdateMobile")]
         public async Task<IActionResult> UpdateMobileDetails([FromBody] Mobile mobile)
         {

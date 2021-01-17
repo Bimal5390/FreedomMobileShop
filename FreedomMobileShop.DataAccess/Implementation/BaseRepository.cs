@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// 
+/// Base repository class for all repository
 /// </summary>
 namespace FreedomMobileShop.DataAccess.Implementation
 {

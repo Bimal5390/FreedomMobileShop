@@ -30,6 +30,10 @@ namespace FreedomMobileShop.Service.Implementation
             _logger = logger;
         }
 
+        /// <summary>
+        /// Business logic for getting stocks available
+        /// </summary>
+        /// <returns>List of stocks</returns>
         public async Task<ListResponse<Stock>> GetAllStocks()
         {
             ListResponse<Stock> result = new ListResponse<Stock>();
@@ -55,6 +59,10 @@ namespace FreedomMobileShop.Service.Implementation
             }
         }
 
+        /// <summary>
+        /// Business logic for getting all mobile details
+        /// </summary>
+        /// <returns>List of mobiles</returns>
         public async Task<ListResponse<Mobile>> GetAllMobiles()
         {
             ListResponse<Mobile> result = new ListResponse<Mobile>();
@@ -80,6 +88,11 @@ namespace FreedomMobileShop.Service.Implementation
             }
         }
 
+        /// <summary>
+        /// Business logic for getting mobile details by name
+        /// </summary>
+        /// <param name="modelName"></param>
+        /// <returns>Return mobile details</returns>
         public async Task<ListResponse<Mobile>> GetMobilesByModelName(string modelName)
         {
             ListResponse<Mobile> result = new ListResponse<Mobile>();
@@ -110,6 +123,12 @@ namespace FreedomMobileShop.Service.Implementation
             }
         }
 
+        /// <summary>
+        /// Business logic for fetching sells report by date
+        /// </summary>
+        /// <param name="fromDate"></param>
+        /// <param name="toDate"></param>
+        /// <returns>Returns sells list</returns>
         public async Task<ListResponse<Payment>> GetSellsReportByDate(DateTime fromDate, DateTime toDate)
         {
             ListResponse<Payment> result = new ListResponse<Payment>();
@@ -135,6 +154,12 @@ namespace FreedomMobileShop.Service.Implementation
             }
         }
 
+        /// <summary>
+        /// Business logic for fetching sells report by brand name and date
+        /// </summary>
+        /// <param name="fromDate"></param>
+        /// <param name="toDate"></param>
+        /// <returns>Returns sells list</returns>
         public async Task<ListResponse<Payment>> GetSellsReportByBrand(DateTime fromDate, DateTime toDate)
         {
             ListResponse<Payment> result = new ListResponse<Payment>();
@@ -160,6 +185,11 @@ namespace FreedomMobileShop.Service.Implementation
             }
         }
 
+        /// <summary>
+        /// Business logic for deleting the mobile details by id
+        /// </summary>
+        /// <param name="mobileId"></param>
+        /// <returns>true if success false if fails</returns>
         public async Task<SingleResponse<bool>> DeleteMobileById(int mobileId)
         {
             SingleResponse<bool> result = new SingleResponse<bool>();
@@ -190,6 +220,11 @@ namespace FreedomMobileShop.Service.Implementation
             }
         }
 
+        /// <summary>
+        /// Business logic for saving the mobile details
+        /// </summary>
+        /// <param name="mobile"></param>
+        /// <returns>true if success false if fails</returns>
         public async Task<SingleResponse<bool>> SaveMobile(Mobile mobile)
         {
             SingleResponse<bool> result = new SingleResponse<bool>();
@@ -220,6 +255,11 @@ namespace FreedomMobileShop.Service.Implementation
             }
         }
 
+        /// <summary>
+        /// Business logic for updating the mobile details
+        /// </summary>
+        /// <param name="mobile"></param>
+        /// <returns>true if success false if fails</returns>
         public async Task<SingleResponse<bool>> UpdateMobileDetails(Mobile mobile)
         {
             SingleResponse<bool> result = new SingleResponse<bool>();

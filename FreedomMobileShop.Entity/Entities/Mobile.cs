@@ -1,7 +1,5 @@
 ﻿namespace FreedomMobileShop.Entity.Entities
 {
-    using System.Collections.Generic;
-
     public class Mobile
     {
         public Mobile()
