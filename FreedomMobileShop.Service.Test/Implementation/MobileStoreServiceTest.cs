@@ -31,6 +31,8 @@ namespace FreedomMobileShop.Service.Test.Implementation
             _serviceWrapper = new ServiceWrapper(_mockIServiceWrapper.Object, _mobileStoreServiceLogger);
         }
 
+        #region TestMethods
+
         [Fact]
         public void GetAllBrands_With_Success_Response()
         {
@@ -87,8 +89,6 @@ namespace FreedomMobileShop.Service.Test.Implementation
             Assert.Equal(actual.Success, expected.Success);
             Assert.Equal(JsonConvert.SerializeObject(actual.Response), JsonConvert.SerializeObject(expected.Response));
         }
-
-        /* Like above we can write the test cases for GetAllStocks, GetAllMobiles */
 
         [Fact]
         public void GetMobilesByModelName_With_Success_Response()
@@ -149,5 +149,9 @@ namespace FreedomMobileShop.Service.Test.Implementation
             Assert.Equal(actual.Success, expected.Success);
             Assert.Equal(JsonConvert.SerializeObject(actual.Response), JsonConvert.SerializeObject(expected.Response));
         }
+
+        /* Like above we can write the test cases for GetAllStocks, GetAllMobiles */
+
+        #endregion
     }
 }

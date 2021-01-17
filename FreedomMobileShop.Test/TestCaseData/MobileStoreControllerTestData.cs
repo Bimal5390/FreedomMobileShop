@@ -1,13 +1,10 @@
 ﻿/// <summary>
-/// 
+/// Test data for Mobile store controller test methods
 /// </summary>
 namespace FreedomMobileShop.Test.TestCaseData
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
-    class MobileStoreControllerTestData
+    public class MobileStoreControllerTestData
     {
+        
     }
 }
